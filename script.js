@@ -1,16 +1,15 @@
- 
- function display(value) {
-    let show = value
-    console.log(show);
-    document.getElementById("display").innerHTML = show;
- }
+function addValue(event) {
+   event.preventDefault();
+   let d = document.getElementById("fullName").value;
+   let fullname = d.slice(0,1) + ' ' + d.substr(d.indexOf(' ')+1,1) +  ' ' +  d.substr(d.lastIndexOf(' ') + 1,1)
+   console.log(fullname);
+   display(fullname);
+}
 
- function addValue(event) {
-    event.preventDefault();
-    firstName = document.getElementById("firstName").value
-    middleName = document.getElementById("middleName").value
-    lastName = document.getElementById("lastName").value
 
-    let fullName = `Your Nickname is : ${firstName.slice(0,1)}${middleName.slice(0,1)}${lastName.slice(0,1)}`;
-    display(fullName);
- }
+function display(value) {
+   let newname = value;
+   document.getElementById("display").innerHTML = newname;
+}
+
+  
